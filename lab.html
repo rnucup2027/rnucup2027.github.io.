@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Oak Groove University</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+        background-color: #ffe6a7;
+        color: #6f1d1b;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: auto;
+    }
+    footer {
+        min-height: 70vh;
+        width: 100%;
+        background-color: #6f1d1b;
+        color: #ffe6a7;
+    }
+    .navbar-custom {
+        background-color: #6f1d1b;
+    }
+    .navbar-brand {
+        color: #ffe6a7;
+    }
+    ul li a {
+        display: inline-block;
+        text-align: left;
+    }
+    ul li {
+        list-style-type: none;
+    }
+    nav {
+        box-shadow: 0px 0px 60px 1px #432818;
+    }
+    .custom-toggler.navbar-toggler {
+        color: #ffe6a7;
+    } 
+    section img {
+        box-shadow: 0px 0px 10px 10px #FACE7F;
+        border-radius: 10%;
+    }
+    #home {
+        background-image: url(images/schp/e.JPG);
+        margin: auto;
+        min-height: 50vh;
+        width: 100%;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #ffe6a7;
+    }   
+    #pro {
+        /*background-image: url(images/prom.jpg);*/
+        min-height: 150vh;
+        width: 100%;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        /*color: #ffe6a7;*/
+    }  
+    #abs {
+        /*background-image: url(images/prom.jpg);*/
+        min-height: 80vh;
+        width: 100%;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        /*color: #ffe6a7;*/
+    }  
+    #bile {
+        /*background-image: url(images/prom.jpg);*/
+        min-height: 65vh;
+        width: 100%;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        /*color: #ffe6a7;*/
+    }  
+    @font-face {
+        font-family: chogu;
+        src: url('fonts/chogu.otf');
+    }
+    #home h1  {
+        font-family: chogu;
+        padding-top:15vh;
+        font-size: 4em;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #911F27;
+    } 
+    h1  {
+        font-family: chogu;
+        padding-top:1vh;
+        font-size: 4em;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #911F27;
+    } 
+    h2 {
+        font-family: chogu;
+        padding-top:20vh;
+        font-size: 4em;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #911F27;
+    } 
+    #intro h2 {
+        padding-top:5vh;
+    } 
+    @font-face {
+        font-family: h14other;
+        src: url('fonts/h14other.ttf');
+    }
+    h3 {
+        font-family: h14other;
+        text-align: center;
+        margin-top:30vh;
+        font-size: 3em;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #911F27;
+    } 
+    @font-face {
+        font-family: where;
+        src: url('fonts/where.otf');
+    }
+    p {
+        font-family: where;
+        font-size: 4em;
+        padding-left: 4vh;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #911F27;
+    }
+    div.gallery {
+        border: 1px solid #ccc;
+    }
+
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .responsive {
+            width: 49.99999%;
+            margin: 6px 0;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .responsive {
+            width: 100%;
+        }
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    } 
+
+    .topnav {
+        overflow: hidden;
+        background-color: #7d3121;
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav .icon {
+        display: none;
+    }
+    @font-face {
+        font-family: learn;
+        src: url('fonts/learn.otf');
+    }
+    .button {
+        font-family: learn;
+        background-color: #911F27;
+        border: none;
+        color: #FCF0C8;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button4 {border-radius: 12px;}
+
+    .button a:link, a:visited {
+        color: white;
+        font-size: 1.5em;
+    }
+
+    .rcorner {
+        border-radius: 25px;
+        padding: 20px; 
+        width: auto;
+        height: auto;  
+        margin: auto;
+        background: rgba(145,31,39,70%);
+        color: white;
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+    .column img {
+        margin-top: 3em;
+    }
+    .column .rcorner {
+        margin-top: 2em;
+    }
+    .column article {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+        h3 {
+            margin-top:5vh;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+            position: absolute;
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+
+    @media screen and (max-width: 390px) {
+        footer h2 {
+        padding-top:10vh;
+        } 
+    }
+
+    .video-player {
+        z-index: -1;
+    }
+</style>     
+</head>
+<body>
+
+    <div style="position: fixed;width: 100%;top: 0;z-index: 3;">
+        <nav class="navbar navbar-dark navbar-custom">
+            <div class="container-fluid">
+                <a class="nav-link, navbar-brand" href="index.html" target="_self"><img src="images/logo.png" alt="OGU's Logo" width="60" height="60"></a>
+                <button class="custom-toggler, navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="custom-toggler, navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <div style="text-align: center;">    
+                        <ul class="navbar-nav, navbar-custom">
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#home">Digestive System Simulation Lab</a>
+                            </li>    
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#intro">Introduction</a>
+                            </li>    
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#pro">Stages of Food Processing</a>
+                            </li>    
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#abs">Simulation of Absorption</a>
+                            </li>     
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#bile">Simulation of Bile Action</a>
+                            </li>     
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#conclu">Conclusion</a>
+                            </li>     
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+<div id="home">
+    <div class="container-fluid mt-3">
+        <div style="margin-top: 50px;text-align: center;">
+            <h1>Digestive System Simulation Lab</h1>
+            <p>How your body breaks down food, made easier.</p>
+        </div>
+    </div>
+</div>
+
+<section>
+<div id="intro">
+    <div class="container-fluid mt-3">
+        <div style="text-align: left;">
+            <h2>Intro</h2>
+            <div style="margin-left: 10vh;margin-right: 10vh">This laboratory page serves as your guide as you investigate this complex internal network that converts food into the energy source that sustains our existence. Knowing about this amazing process not only satisfies our curiosity but also gives us the ability to make well-informed decisions regarding our food and general health. Imagine utilizing only common household items to break down a meal into its individual parts. You may accomplish just that with our simulation activity, which offers a practical method of understanding the important phases of digestion. By mimicking the functions of the diffent parts of the system, you'll be able to understand the complex choreography that keeps us fed.</div>
+        </div>
+    </div>
+</div>
+
+<div id="pro">
+    <div class="container-fluid mt-3">
+        <div style="text-align: left;">
+            <h2>Stages of Food Processing</h2>
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <img src="images/bpic/crushp.JPG"  alt="teachers" width="300" height="300">
+                    </div>
+                    <div class="column">        
+                        <p>Crushing Stage</p>
+                        <div class="rcorner">Observation: When the bananas and crackers were put into the ziplock bag, they were still whole and undigested. When the water was put into the ziplock bag together with the bananas and crackers, the food started to soften. The ziplock bag expanded when the food entered. The process of crushing the food was made easier due to the liquids added. </div>
+                        <div class="rcorner">Discussion: The process of putting bananas and crackers into the ziplock bag simulates ingestion. The addition of water represents the salivary amylase secreted by the salivary glands. Since the ziplock bag expanded, it acted as the stomach. Crushing the food simulates the mechanical digestion of food in the stomach. Adding the orange juice simulates the acid in the stomach which chemically digests the food. Since digestion in the stomach has occurred, the possible biomolecules present are carbohydrates and protein.</div>
+                    </div>
+                </div>
+            </div>      
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <img src="images/bpic/transfer.JPG"  alt="teachers" width="350" height="300">
+                        <img src="images/bpic/squeeze.JPG"  alt="teachers" width="350" height="300">
+                    </div>
+                    <div class="column">        
+                        <p>Transfer Stage</p>
+                        <div class="rcorner">Observation: The sock drained a lot of the liquid present in the sock. The tray was the container that caught the liquids drained by the sock. Undigested material, soon to be feces, are left in the sock. By pushing the partially solidified content, elimination of the feces is accomplished.</div>
+                        <div class="rcorner">Discussion: The liquid flowing out of the sock simulates the nutrients from the food needed by the body. The tray represents the body's way of obtaining nutrients from the food. The process of pushing the solidified content or undigested material represents the budy's way to extract the nutrients out of the body.
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <img src="images/bpic/elim.JPG"  alt="teachers" width="350" height="300">
+                        <img src="images/bpic/feces.JPG"  alt="teachers" width="350" height="425">
+                    </div>
+                    <div class="column">        
+                        <p>Elimination Stage</p>
+                        <div class="rcorner">Observation: When a hole was cut-out in the sock, it created a passageway for the solidified content. The solidified content exited through the hole and was caught in the jar.</div>
+                        <div class="rcorner">Discussion: The solidified material flowing out of the sock simulates the elimination of feces.  The process of pushing the solidified content or undigested material out of the sock represents the rectum and anus.
+                        </div>
+                    </div>
+                </div>
+            </div>      
+        </div>
+    </div>
+</div>
+
+<div id="abs">
+    <div class="container-fluid mt-3">
+        <div style="text-align: left;">
+            <h2>Simulation of Absorption</h2>
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <img src="images/bpic/cyl.jpg"  alt="teachers" width="350" height="400">
+                    </div>
+                    <div class="column">        
+                        <div class="rcorner">Observation: Out of 100 mL of water in the graduated cylinder, 92 mL was left meaning that the 4-fold paper towel absorbed 8 mL.</div>
+                        <div class="rcorner">Discussion: The 4-fold paper towel absorbed the largest amount of water since it provided more surface area for absorption compared to the other paper towels that had one, two, or three folds only. The part of the digestive system that absorbs is the small intestine. The structure of the small intestine coincides with its function since it has a high surface area for absorption. The small intestine is composed of villi which is also composed of microvilli. The small intestine is also the longest compartment in the digestive system, making it a convenient place for absorption in the body.</div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+
+<div id="bile">
+    <div class="container-fluid mt-3">
+        <div style="text-align: left;">
+            <h2>Simulation of Bile Action</h2>
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <img src="images/bpic/cups.jpg"  alt="teachers" width="350" height="300">
+                    </div>
+                    <div class="column">        
+                    <div class="rcorner">Observation: Both jars have water and oil in them, but jar A has dishwashing liquid. When jar A was stirred, it showed no signs of the oil. When jar B was stirred, it showed how heterogenous the mixture of water and oil is. </div>
+                    <div class="rcorner">Discussion: Bile plays a role in chemical digestion. This means that bile aids in the digestion of fats.</div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+
+<div id="conclu">
+    <div class="container-fluid mt-3">
+        <div style="text-align: left;">
+            <h2>Conclusion</h2>
+            <div class="center">
+                <div class="row">
+                    <div class="column" >
+                        <video width="370" height="440" controls>
+                            <source src="images/bpic/outt.ogg" type="video/ogg">
+                            <source src="images/bpic/outt.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">        
+                    <div class="rcorner">Using common home items, this lab exercise explores the fascinating realm of human digestion in a way that is both accessible and captivating. You can actually see how food is broken down, nutrients are retrieved, and waste is removed by using bananas, crackers, orange juice, and paper towels to simulate the crushing, transfer, and absorption steps. This exercise highlights the complex structure of the digestive system, such as the small intestine's villi, which maximize absorption. </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+</section>
+
+<footer>
+    <div id="contact">
+        <div class="container-fluid mt-3">
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <h2>Our Contacts</h2>
+                        <a class="button button4" href="contact.html" target="_blank">Learn More</a>
+                    </div>
+                    <div class="column">
+                        <h3>Copyright 2023 Ceralde Nucup Sula</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>      
+
+</body>
+</html>

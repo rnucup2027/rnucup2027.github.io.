@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Oak Groove University</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+        background-color: #ffe6a7;
+        color: #6f1d1b;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: auto;
+    }
+    footer {
+        min-height: 70vh;
+        width: 100%;
+        background-color: #6f1d1b;
+        color: #ffe6a7;
+    }
+    .navbar-custom {
+        background-color: #6f1d1b;
+    }
+    .navbar-brand {
+        color: #ffe6a7;
+    }
+    ul li a {
+        display: inline-block;
+        text-align: left;
+    }
+    ul li {
+        list-style-type: none;
+    }
+    nav {
+        box-shadow: 0px 0px 60px 1px #432818;
+    }
+    .custom-toggler.navbar-toggler {
+        color: #ffe6a7;
+    } 
+    section img {
+        box-shadow: 0px 0px 10px 10px #FACE7F;
+        border-radius: 10%;
+    }
+    #home {
+        background-image: url(images/schp/e.JPG);
+        margin: auto;
+        min-height: 50vh;
+        width: 100%;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #ffe6a7;
+    }   
+    #fc {
+        min-height: 65vh;
+        width: 100%;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }  
+    #an {
+        min-height: 65vh;
+        width: 100%;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }  
+    #as {
+        min-height: 65vh;
+        width: 100%;
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }  
+    @font-face {
+        font-family: chogu;
+        src: url('fonts/chogu.otf');
+    }
+    #home h1  {
+        font-family: chogu;
+        padding-top:15vh;
+        font-size: 4em;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #911F27;
+    } 
+    h1  {
+        font-family: chogu;
+        padding-top:1vh;
+        font-size: 4em;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #911F27;
+    } 
+    h2 {
+        font-family: chogu;
+        padding-top:20vh;
+        font-size: 4.5em;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #911F27;
+    } 
+    #intro h2 {
+        padding-top:5vh;
+    } 
+    @font-face {
+        font-family: h14other;
+        src: url('fonts/h14other.ttf');
+    }
+    h3 {
+        font-family: h14other;
+        text-align: center;
+        margin-top:30vh;
+        font-size: 3em;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #911F27;
+    } 
+    @font-face {
+        font-family: where;
+        src: url('fonts/where.otf');
+    }
+    p {
+        font-family: where;
+        font-size: 4em;
+        padding-left: 4vh;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #911F27;
+    }
+    div.gallery {
+        border: 1px solid #ccc;
+    }
+
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .responsive {
+            width: 49.99999%;
+            margin: 6px 0;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .responsive {
+            width: 100%;
+        }
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    } 
+
+    .topnav {
+        overflow: hidden;
+        background-color: #7d3121;
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav .icon {
+        display: none;
+    }
+    @font-face {
+        font-family: learn;
+        src: url('fonts/learn.otf');
+    }
+    .button {
+        font-family: learn;
+        background-color: #911F27;
+        border: none;
+        color: #FCF0C8;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button4 {border-radius: 12px;}
+
+    .button a:link, a:visited {
+        color: white;
+        font-size: 1.5em;
+    }
+
+    .rcorner {
+        border-radius: 25px;
+        padding: 20px; 
+        width: auto;
+        height: auto;  
+        margin: auto;
+        background: rgba(145,31,39,70%);
+        color: white;
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+    .column img {
+        margin-top: 3em;
+    }
+    .column .rcorner {
+        margin-top: 2em;
+    }
+    .column article {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+        h3 {
+            margin-top:5vh;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+            position: absolute;
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+
+    @media screen and (max-width: 390px) {
+        footer h2 {
+        padding-top:10vh;
+        } 
+    }
+
+    .video-player {
+        z-index: -1;
+    }
+</style>     
+</head>
+<body>
+
+    <div style="position: fixed;width: 100%;top: 0;z-index: 3;">
+        <nav class="navbar navbar-dark navbar-custom">
+            <div class="container-fluid">
+                <a class="nav-link, navbar-brand" href="index.html" target="_self"><img src="images/logo.png" alt="OGU's Logo" width="60" height="60"></a>
+                <button class="custom-toggler, navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="custom-toggler, navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <div style="text-align: center;">    
+                        <ul class="navbar-nav, navbar-custom">
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#home">English Sonnets</a>
+                            </li>    
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#intro">Introduction</a>
+                            </li>    
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#fc">Ceralde</a>
+                            </li>    
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#an">Nucup</a>
+                            </li>     
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#as">Sula</a>
+                            </li>     
+                            <li class="nav-item">
+                                <a class="nav-link, navbar-brand" href="#conclu">Conclusion</a>
+                            </li>     
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+<div id="home">
+    <div class="container-fluid mt-3">
+        <div style="margin-top: 50px;text-align: center;">
+            <h1>Swift's Songs as Sonnets</h1>
+            <p>Taylor Swift + Sonnet + Us = YAY</p>
+            <p>Theme: Love has unpredictable and complex outcomes.</p>
+        </div>
+    </div>
+</div>
+
+<section>
+<div id="intro">
+    <div class="container-fluid mt-3">
+        <div style="text-align: left;">
+            <h2>The Aftermath of Daylight</h2>
+            <div style="margin-left: 10vh;margin-right: 10vh">The poems explore the themes of self-discovery, heartbreak, and love that are commonly observed among the universal themes that Taylor Swift frequently explores in her songs. Her lyrics frequently elicit deep thought and insight from listeners and give them a fresh 
+                outlook on their own lives and experiences. We chose two different yet related albums from her life's work to show the parallelism  of the outcomes of love and what it can do to us. In summary, these sonnets are the short overviews of intricate relationships.</div>
+        </div>
+    </div>
+</div>
+
+<div id="fc">
+    <div class="container-fluid mt-3">
+        <div style="text-align: left;">
+            <h2>CERALDE, Frediliz Rosette B.</h2>
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <p>Dress</p>
+                        <img src="images/english/repu.jpeg"  alt="teachers" width="350" height="350">
+                    </div>
+                    <div class="column">   
+                        <p>Petrarchan</p>     
+                        <div class="rcorner">
+                            <b>More than you want to</b><br><br>
+                            Our secret glances we share eye-wide,<br>
+                            They have no idea about you and I.<br>
+                            But, baby, it's getting hard to lie.<br>
+                            When you put your mark on me, I swollowed my pride.<br>
+                            This growing thought of being your bride can't seem to slide.<br>
+                            Whenever you're near me, it feels like a never-ending euphoric high.<br>
+                            This bewildering feeling that I go to bed with and cry,<br>
+                            Best friends? They don't wake up bedside and later hide.<br><br>
+                            
+                            No one knows me like you do.<br>
+                            You are the only one who matters to me,<br>
+                            Tell me, then, who do I run to?<br>
+                            So give me a memory that I can look back on with glee.<br>
+                            On a fantasy of just me and you,<br>
+                            Where I can love you with a guarantee.<br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <p>The Man</p>
+                        <img src="images/english/lover.jpeg"  alt="teachers" width="350" height="350">
+                    </div>
+                    <div class="column">   
+                        <p>Shakespearean</p>   
+                        <audio controls>
+                            <source src="images/english/fc.ogg" type="audio/ogg">
+                            <source src="images/english/fc.mp3" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                          </audio>  
+                        <div class="rcorner">
+                            <b>Happily ever After</b><br><br>
+                            Do all girls need a prince?<br>
+                            It doesn't mean I'm lonely when I choose to stand solitary,<br>
+                            Men have come and gone ever since.<br>
+                            That's my choice, and I'm not hurting anyone with my type of dictionary.<br><br>
+                            
+                            You should act ladylike and obey.<br>
+                            Everyone judging me; do you expect me to crumble down?<br>
+                            When the players play? It's just okay.<br>
+                            But it's time for my good ideas to be heard and to get my crown.<br><br>
+                            
+                            I'm so sick of running as fast as I can from men.<br>
+                            This time I'm only looking at me, myself, and I; that's the plan.<br>
+                            They get mad and bad; can't they comprehend?<br>
+                            Because if I were the man, I'd be the man.<br><br>
+                            
+                            To all of the girls fighting alone,<br>
+                            Honey, don't stop dancing till you get your throne.<br>
+                        </div>
+                    </div>    
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+
+<div id="an">
+    <div class="container-fluid mt-3">
+        <div style="text-align: left;">
+            <h2>NUCUP, Roann Alexa G.</h2>
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <p>Call It What You Want</p>
+                        <img src="images/english/repu.jpeg"  alt="teachers" width="350" height="350">
+                    </div>
+                    <div class="column">   
+                        <p>Petrarchan</p> 
+                        <audio controls>
+                            <source src="images/english/an.ogg" type="audio/ogg">
+                            <source src="images/english/an.mp3" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                        </audio>      
+                        <div class="rcorner">
+                            <b>Joint Hearts Over Hatred Whispers</b><br><br>
+
+                            With faults and flaws exposed, my name ashamed,<br>
+                            Unready, I face the judgment's fierce gaze.<br>
+                            Unfazed by hate, my inner peace ablaze,<br>
+                            Amidst the dark storm, our love remained.<br>
+                            Protecting me from the sharp world unmaimed,<br>
+                            My lover bears all of the drama craze.<br>
+                            My heart finds solace in my lover's haze.<br>
+                            May others judge, our bond remains unflamed.<br><br>
+
+                            Old wounds left my heart guarded and secure.<br>
+                            False accusations cloud our bond, they say.<br>
+                            In your arms, past wounds and whispers endure.<br>
+                            Finding your love, an act both true and pure.<br>
+                            Amidst life's maze, you are my guiding ray.<br>
+                            With you, my wounds discovered its true cure.<br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <p>I Forgot That You Existed</p>
+                        <img src="images/english/lover.jpeg"  alt="teachers" width="350" height="350">
+                    </div>
+                    <div class="column">   
+                        <p>Shakespearean</p>   
+                        <div class="rcorner">
+                            <b>Indifference Takes Over</b><br><br>
+                            In echoes' depths, how long do my aches dwell?<br>
+                            Your love's dark echoes haunt my troubled mind.<br>
+                            Neath your cloud, I was living in unwell.<br>
+                            With thoughts of grief and woe, my heart's depths twine.<br><br>
+                            
+                            Your name, a burden on my tongue-tied lips,<br>
+                            Your presence, haunting every waking hour,<br>
+                            A fixed stay in my mind's repeating clips,<br>
+                            In my thoughts, your deeds are in full contour.<br><br>
+                            
+                            But then one night, a cryptic, fine release,<br>
+                            A mantle of void gently did appear,<br>
+                            Your presence dwindled, lost in gentle peace.<br>
+                            I feared your absence, but my end is not near.<br><br>
+                            
+                            My tangled heart, too fraught to keep you close,<br>
+                            My fervor fades, detachment makes a pose.<br>
+                        </div>
+                    </div>    
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+
+<div id="as">
+    <div class="container-fluid mt-3">
+        <div style="text-align: left;">
+            <h2>SULA, Angeline Norin G.</h2>
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <p>Getaway Car</p>
+                        <img src="images/english/repu.jpeg"  alt="teachers" width="350" height="350">
+                    </div>
+                    <div class="column">   
+                        <p>Petrarchan</p>   
+                        <audio controls>
+                            <source src="images/english/as.ogg" type="audio/ogg">
+                            <source src="images/english/as.mp3" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                        </audio>   
+                        <div class="rcorner">
+                            <b>An Unwanted, but Incomplete Close</b><br><br>
+
+                            Such conclusion should've been the one that I expected<br>
+                            Those short-lived moments bittersweet<br>
+                            I endowed us a quick fire yet you remained in your seat<br>
+                            I too turned a blind eye because I was yet to be affected<br>
+                            Seeking an excuse as I was uncontented<br>
+                            The road being broken in the previous street <br>
+                            I was beat but I didn't want to retreat<br>
+                            It was an ambush where the glass was tinted<br><br>
+
+                            The key was never about how fast it was<br>
+                            Keeping your eyes close to an ending that we chose<br>
+                            From the start we should have known it wasn't going to your accord<br>
+                            Stoked was I and the underlying danger was the cause<br>
+                            Now that the sweet moments came to a close<br>
+                            Staying is just something that I could not afford<br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <p>Afterglow</p>
+                        <img src="images/english/lover.jpeg"  alt="teachers" width="350" height="350">
+                    </div>
+                    <div class="column">   
+                        <p>Shakespearean</p>    
+                        <div class="rcorner">
+                            <b>A Burnt Wish</b><br><br>
+
+                            To a shining jewel I delivered a blow<br>
+                            My baseless accusation caused you<br>
+                            I left impuissant who I thought was a foe<br>
+                            With the way you fell I can't help but wish I saw it through<br><br>
+
+                            I chose to drown myself and isolate<br>
+                            Made you suffer with my refusal to liaise <br>
+                            I cried too much and it gathered in a plate<br>
+                            And I wondered why I had to set you ablaze<br><br>
+
+                            I admit I'm at fault <br>
+                            I unknowingly added fuel to our spark<br>
+                            My intention was none of that sort<br>
+                            But I'm hoping that I left some kind of mark<br><br>
+
+                            So we can relive the smoke of dead embers<br>
+                            I'll enkindle it so don't surrender<br>
+                        </div>
+                    </div>    
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+
+</section>
+
+<footer>
+    <div id="contact">
+        <div class="container-fluid mt-3">
+            <div class="center">
+                <div class="row">
+                    <div class="column">
+                        <h2>Our Contacts</h2>
+                        <a class="button button4" href="contact.html" target="_blank">Learn More</a>
+                    </div>
+                    <div class="column">
+                        <h3>Copyright 2023 Ceralde Nucup Sula</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>    
+
+</body>
+</html>

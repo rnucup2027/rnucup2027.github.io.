@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Oak Groove University</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+        <style>
+            body {
+                background-color: #ffe6a7;
+                color: #6f1d1b;
+            }
+            video {
+                top: 0;
+                left: 0;
+                max-width: 100%;
+                height: auto;
+            }
+            footer {
+            min-height: 70vh;
+            width: 100%;
+            background-color: #6f1d1b;
+            color: #ffe6a7;
+            }
+            .navbar-custom {
+                background-color: #6f1d1b;
+            }
+            .navbar-brand {
+                color: #ffe6a7;
+            }
+            ul li a {
+                display: inline-block;
+                text-align: left;
+            }
+            ul li {
+                list-style-type: none;
+            }
+            nav {
+                box-shadow: 0px 0px 60px 1px #432818;
+            }
+            .custom-toggler.navbar-toggler {
+                color: #ffe6a7;
+            } 
+            #home {
+                min-height: 100vh;
+                width: 100%;
+                height: auto;
+                margin: auto;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                color: #ffe6a7;
+            }   
+            #about {
+                background-image: url(./images/schp/e.JPG);
+                min-height: 100vh;
+                width: 100%;
+                height: auto;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                color: #ffe6a7;
+            }   
+            #academics {
+                background-image: url(./images/schp/rb.JPG);
+                min-height: 100vh;
+                width: 100%;
+                height: auto;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                color: #ffe6a7;
+            }  
+            #extra {
+                background-image: url(./images/schp/e.JPG);
+                min-height: 100vh;
+                width: 100%;
+                height: auto;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                color: #ffe6a7;
+            }  
+            #calendar {
+                background-image: url(./images/schp/lef.jpg);
+                min-height: 100vh;
+                width: 100%;
+                height: auto;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                color: #ffe6a7;
+            }  
+            @font-face {
+                font-family: chogu;
+                src: url('fonts/chogu.otf');
+            }
+            h1 {
+                font-family: chogu;
+                padding-top:30vh;
+                font-size: 4.5em;
+                -webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: #911F27;
+            } 
+            h2 {
+                font-family: chogu;
+                padding-top:40vh;
+                font-size: 4.5em;
+                -webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: #911F27;
+            } 
+            footer h2 {
+                font-family: chogu;
+                padding-top:20vh;
+                font-size: 4.5em;
+                -webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: #911F27;
+            } 
+            @font-face {
+                font-family: h14other;
+                src: url('fonts/h14other.ttf');
+            }
+            h3 {
+                font-family: h14other;
+                text-align: center;
+                margin-top:30vh;
+                padding-left:5vh;
+                font-size: 3em;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: #911F27;
+            } 
+            @font-face {
+                font-family: where;
+                src: url('fonts/where.otf');
+            }
+            p {
+                font-family: where;
+                padding-left:5vh;
+                font-size: 4em;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: #911F27;
+            }
+            div.gallery {
+                border: 1px solid #ccc;
+            }
+            div.gallery:hover {
+                border: 1px solid #777;
+            }
+            div.gallery img {
+                width: 100%;
+                height: auto;
+            }
+            div.desc {
+                padding: 15px;
+                text-align: center;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            .responsive {
+                padding: 0 6px;
+                float: left;
+                width: 24.99999%;
+            }
+            @media only screen and (max-width: 768px) {
+                .responsive {
+                    width: 49.99999%;
+                    margin: 6px 0;
+                }
+            }
+            @media only screen and (max-width: 500px) {
+                .responsive {
+                    width: 100%;
+                }
+            }
+            .clearfix:after {
+                content: "";
+                display: table;
+                clear: both;
+            } 
+            .topnav {
+                overflow: hidden;
+                background-color: #7d3121;
+                position: fixed;
+                width: 100%;
+                top: 0;
+            }
+            .topnav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            .topnav .icon {
+                display: none;
+            }
+            @font-face {
+                font-family: learn;
+                src: url('fonts/learn.otf');
+            }
+            .button {
+                font-family: learn;
+                background-color: #911F27;
+                border: none;
+                color: #FCF0C8;
+                padding: 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            .button4 {border-radius: 12px;}
+            .button a:link, a:visited {
+                color: white;
+                font-size: 1.5em;
+            }
+            .column {
+                float: left;
+                width: 50%;
+                text-align: center;
+                padding-right: 2em;
+            }
+            .column img {
+                margin-bottom: 1em;
+            }
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+                .column {
+                    width: 100%;
+                }
+                h3 {
+                    margin-top:5vh;
+                }
+            }
+            @media screen and (max-width: 600px) {
+                .topnav a:not(:first-child) {display: none;}
+                .topnav a.icon {
+                    float: right;
+                    display: block;
+                }
+            }
+            @media screen and (max-width: 600px) {
+                .topnav.responsive {position: relative;}
+                .topnav.responsive .icon {
+                    position: absolute;
+                    position: fixed;
+                    right: 0;
+                    top: 0;
+                }
+                .topnav.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
+            }
+            @media screen and (max-width: 390px) {
+                h1, h2, footer h2 {
+                padding-top:10vh;
+                } 
+            }
+        </style>    
+    </head>
+    <body>
+        <div style="position: fixed;width: 100%;top: 0;">
+            <nav class="navbar navbar-dark navbar-custom">
+                <div class="container-fluid">
+                    <a class="nav-link, navbar-brand" href="index.html" target="_self"><img src="./images/logo.png" alt="OGU's Logo" width="60" height="60"></a>
+                    <button class="custom-toggler, navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="custom-toggler, navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <div style="text-align: center;">    
+                            <ul class="navbar-nav, navbar-custom">
+                                <li class="nav-item">
+                                    <a class="nav-link, navbar-brand" href="#about" target="_self">About</a>
+                                </li>    
+                                <li class="nav-item">
+                                    <a class="nav-link, navbar-brand" href="#academics" target="_self">Academics</a>
+                                </li>    
+                                <li class="nav-item">
+                                    <a class="nav-link, navbar-brand" href="#extra" target="_self">Extracurriculars</a>
+                                </li> 
+                                <li class="nav-item">
+                                    <a class="nav-link, navbar-brand" href="#contact" target="_self">Contact Us</a>
+                                </li>      
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div id="home">
+            <div class="container-fluid mt-3">
+                <div style="text-align: center;">
+                    <div class="center">    
+                                <h1>Choose Oak Groove Uni.</h1>
+                                <p>Where roots run deep and knowledge grows strong.</p>
+                                <video width="600" playsinline autoplay muted loop id="bgvid" style="z-index:-1">
+                                    <source src="images/schp/promo1.ogg" type="video/ogg">
+                                    <source src="images/schp/promo1.mp4" type="video/mp4">
+                                </video>
+                    </div>   
+                </div>
+            </div>
+        </div>
+
+        <div id="about">
+            <div class="container-fluid mt-3">
+                <div class="center">
+                    <div class="row">
+                        <div class="column">
+                            <h2>About OGU</h2>
+                        </div>
+                        <div class="column">
+                            <h3>A university that creates doors towards a bright future.</h3>
+                            <a class="button button4" href="about.html" target="_blank">Learn More</a>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="academics">
+            <div class="container-fluid mt-3">
+                <div class="center">
+                    <div class="row">
+                        <div class="column">
+                            <h2>Explore</h2>
+                        </div>
+                        <div class="column">
+                            <h3>A perfect place for your child to explore the curriculum we offer.</h3>
+                            <a class="button button4" href="academics.html" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="extra">
+            <div class="container-fluid mt-3">
+                <div class="center">
+                    <div class="row">
+                        <div class="column">
+                            <h2>Going Beyond</h2>
+                        </div>
+                        <div class="column">
+                            <h3>A welcoming environment for abilities in extra-curriculars.</h3>
+                            <a class="button button4" href="extra.html" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div id="contact">
+                <div class="container-fluid mt-3">
+                    <div class="center">
+                        <div class="row">
+                            <div class="column">
+                                <h2>Our Contacts</h2>
+                                <a class="button button4" href="contact.html" target="_blank">Learn More</a>
+                            </div>
+                            <div class="column">
+                                <h3>Copyright 2023 Ceralde Nucup Sula</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>   
+    </body>
+</html>
